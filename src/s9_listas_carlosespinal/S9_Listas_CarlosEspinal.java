@@ -74,6 +74,18 @@ public class S9_Listas_CarlosEspinal {
         }while(resp2 == 's' || resp2 == 'S');
     }
     
+    public static void delBook(){
+        char r = 's';
+        do{
+            System.out.println("Ingrese el indice del libro que desea eliminar: ");
+            int index = read.nextInt()-1;
+            Libro lib = l.registro.remove(index);
+            System.out.println("Desea borrar otro libro?:[S/N]");
+            r = read.next().charAt(0);
+            
+        }while(r == 's'|| r == 'S');
+    }
+    
     public static void listBook(){
         char r = 's';
         do{
@@ -98,9 +110,13 @@ public class S9_Listas_CarlosEspinal {
                 modBook();
                 break;
             case 3:
+                delBook();
                 break;
             case 4:
                 listBook();
+                break;
+            case 0:
+                resp = 'n';
                 break;
         }
         }while(resp == 's' || resp == 'S');
